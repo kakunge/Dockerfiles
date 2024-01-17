@@ -28,9 +28,13 @@ RUN git clone https://github.com/neovim/neovim.git && cd neovim && make CMAKE_BU
 # astronvim
 RUN git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
-COPY ../../init.lua /setup/config/init.lua
-COPY ../../.zshrc /setup/config/.zshrc
+COPY init.lua /setup/config/init.lua
+COPY .zshrc /setup/config/.zshrc
 
 WORKDIR /home
+
+# v8
+COPY x86/ubuntu20.04/v8/build.sh /home/build.sh
+RUN chmod 755 /home/build.sh && /home/build.sh
 
 CMD [ "zsh" ]
