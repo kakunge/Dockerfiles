@@ -17,6 +17,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 # powerlevel10k
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 RUN echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
+RUN chsh -s /usr/bin/zsh
 
 # pwndbg
 RUN git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh
