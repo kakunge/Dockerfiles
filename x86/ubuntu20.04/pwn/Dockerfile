@@ -22,6 +22,12 @@ RUN chsh -s /usr/bin/zsh
 # pwndbg
 RUN git clone https://github.com/pwndbg/pwndbg && cd pwndbg && ./setup.sh
 
+# gef
+RUN git clone https://github.com/hugsy/gef.git && echo source `pwd`/gef/gef.py >> ~/.gdbinit
+
+# peda
+RUN git clone https://github.com/longld/peda.git && echo source `pwd`/peda/peda.py >> ~/.gdbinit
+
 # neovim
 RUN git clone https://github.com/neovim/neovim.git && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install
 
