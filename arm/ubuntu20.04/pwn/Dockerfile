@@ -28,13 +28,6 @@ RUN git clone https://github.com/hugsy/gef.git && echo source `pwd`/gef/gef.py >
 # peda
 RUN git clone https://github.com/longld/peda.git && echo source `pwd`/peda/peda.py >> ~/.gdbinit
 
-# neovim
-RUN git clone https://github.com/neovim/neovim.git && cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && make install
-
-# astronvim
-RUN git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-
-COPY init.lua /setup/config/init.lua
 COPY .zshrc /setup/config/.zshrc
 
 WORKDIR /home

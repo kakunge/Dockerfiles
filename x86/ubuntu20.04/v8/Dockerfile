@@ -43,4 +43,9 @@ WORKDIR /home
 COPY x86/ubuntu20.04/v8/build.sh /home/build.sh
 RUN chmod 755 /home/build.sh && /home/build.sh
 
+# node
+RUN wget https://nodejs.org/dist/v20.11.0/node-v20.11.0.tar.gz && tar zxvf node-v20.11.0.tar.gz && cd node-v20.11.0 && ./configure && make -j4
+
+# npm
+
 CMD [ "zsh" ]

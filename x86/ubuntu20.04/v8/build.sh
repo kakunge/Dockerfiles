@@ -15,5 +15,5 @@ ninja -C ./out.gn/x64.release
 ./tools/dev/v8gen.py x64.debug
 ninja -C ./out.gn/x64.debug
 
-tools/dev/gm.py x64.release
-tools/dev/gm.py x64.debug
+# tools/dev/gm.py x64.release
+# tools/dev/gm.py x64.debug
